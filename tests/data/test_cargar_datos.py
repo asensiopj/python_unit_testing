@@ -11,7 +11,7 @@ class TestRemoveNan(object):
         Fail if provided value is not NaN
         """
         message = "Actual return value"
-        df = pd.read_csv("../../src/data/googleplaystore.csv", sep=",") # go up one level beccause of we are in test file global
+        df = pd.read_csv("src/data/googleplaystore.csv", sep=",") # go up one level beccause of we are in test file global
         remove_nan(df, 'Rating')
 
         assert df['Rating'].isnull().values.any() == pytest.approx(0), message

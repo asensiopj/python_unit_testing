@@ -4,6 +4,10 @@ python:
 
 install: 
   - pip install -e .
+  - pip install pytest-cov code-cov # Package to cov test
 
 script:
-  - pytest tests
+  - pytest --cov=src tests # Point to source directory
+
+after_success:
+  - codecov # Uploads the report

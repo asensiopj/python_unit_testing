@@ -10,4 +10,5 @@ script:
   - pytest --cov=src tests # Point to source directory
 
 after_success:
-  - codecov # Uploads the report
+ - bash <(curl -s https://codecov.io/bash)
+
